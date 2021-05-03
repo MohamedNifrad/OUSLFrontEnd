@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+    <a class="navbar-brand" routerLink="home" routerLinkActive="active"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample" aria-controls="navbarsExample" aria-expanded="false" aria-label="Toggle navigation">
+    
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarsExample">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" *ngIf="logoutbtn" routerLink="dashboard" (click)="logout()" routerLinkActive="active">Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <button type="button" *ngIf="logoutbtn" class="btn btn-block" (click)="logout()">logout</button>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<router-outlet></router-outlet>

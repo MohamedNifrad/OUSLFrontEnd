@@ -1,0 +1,30 @@
+<h2 class="text-center">Registration</h2>
+<div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6 col-md-offset-3">
+        <div class="jumbotron">
+            <form [formGroup]="form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" formControlName="email" autocomplete="off" class="form-control input-sm" placeholder="Email" ngModel>
+                </div>
+                <div class="form-group">
+                    <label for="Password">Password</label>
+                    <input type="password" name="Password" formControlName="password" autocomplete="off" class="form-control input-sm" placeholder="Password" ngModel>
+                </div>
+                <div class="form-group">
+                    <label for="name">User Name</label>
+                    <input type="text" name="userName" formControlName="username" autocomplete="off" class="form-control input-sm" placeholder="Name" ngModel>
+                </div>
+                <button type="" class="btn btn-success" (click)="register()">Register</button>
+
+                <div>
+                    <p>do you want to login<a type="button" style="color: rgb(139, 128, 238);" (click)="loginrouter()">Click</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-3">
+    </div>
+</div>
