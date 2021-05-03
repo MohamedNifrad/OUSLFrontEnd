@@ -46,4 +46,9 @@ export class AdminServiceService {
     localStorage.removeItem('role');
     localStorage.removeItem('username');
   }
+
+  getMaterialsCountAvailableService(materialId): Observable<any>{
+    const url = this.lUrl + '/api/materials/get-materials-available/'+materialId;
+    return this.http.get(url)
+  }
 }

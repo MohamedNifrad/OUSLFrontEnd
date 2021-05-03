@@ -1,1 +1,43 @@
-<p>dashboard works!</p>
+<div class="modal-body">
+    <table class="table table-bordered table-striped" id="table1">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Category</th>
+          <th>author</th>
+          <th>Available QTY</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of materials; let i = index ">
+          <td>{{c.name}}</td>
+          <td>{{c.category}}</td>
+          <td>{{c.author}}</td>
+          <td><button (click)="view(c.id)">view</button></td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+
+
+
+<!-- View Students List -->
+<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modal-secondary" id="openModel" hidden>
+    Launch Secondary Modal
+  </button>
+
+<div class="modal fade" id="modal-secondary">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Available QTY</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span></button>
+            </div>
+            
+            <div class="modal-body">
+                <h1>Available QTY:- {{materialCounts}}</h1>
+            </div>
+        </div>
+    </div>
+</div>
