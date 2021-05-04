@@ -44,20 +44,20 @@ export class AssociateMaterialsComponent implements OnInit {
 
   saveData()
   {
-    console.log(this.myForm.value)
+    console.log(this.myForm.value);
 
-    let pass = this.myForm.value;
-    pass['user'] = {
-      'id' : this.myForm.value['user']
+    let abc={
+      "user":{
+        "id":this.myForm.get('user').value
+    },
+    "materials":{
+        "id":this.myForm.get('materials').value
     }
-    delete pass['user']
+    }
 
-    pass['materials'] = {
-      'id' : this.myForm.value['materials']
-    }
-    delete pass['materials']
+    console.log(abc)
     
-    this.apiAdminService.addUserMaterials(this.myForm.value).subscribe(
+    this.apiAdminService.addUserMaterials(abc).subscribe(
       response =>
       {
         alert('success')
